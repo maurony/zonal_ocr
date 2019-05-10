@@ -63,19 +63,19 @@ def perform_ocr(input_path, coordinates):
 # -------------
 # get the pdf
 pdf_path = './docs/scans.pdf'
-# and extract each page into a jpeg
+# and extract each page and convert it into a jpeg
 extract_pages(pdf_path, 'img')
 
-# define image path
+# define image path (here first image)
 image_path = 'img/page_0.jpg'
 # coordinates from top left
-# these can be easily be defined using gimp
+# these can easily be defined using gimp
 zones = [
     (240, 900, 1400, 975),
     (237, 2220, 456, 2253)
 ]
 
-# draw boxes in images
+# draw boxes in images for illustration purposes
 draw_boxes(image_path, zones, 'extraction_zones.jpg')
 
 # if boxes are correct, then perform ocr indexing on them
